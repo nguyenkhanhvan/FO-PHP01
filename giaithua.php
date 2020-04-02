@@ -1,14 +1,4 @@
-<?php 
- 	$n = $_POST["n"];
- 	$j = 1;
- 	$s=0;
 
- 	for ($i=1; $i <= $n ; $i++) { 
- 		$j *= $i;
- 		$s += $i/$j;
-
- 	}
- ?>
  <!DOCTYPE html>
  <html>
  <head>
@@ -39,13 +29,29 @@
 
  	</style>
  </head>
+ 	<?php 
+ 			$n = 0;
+			if(isset($_POST["nhapn"]))
+				{
+					$n = $_POST["nhapn"];
+				}
+ 	
+ 				$j = 1;
+ 				$s=0;
+
+ 			for ($i=1; $i <= $n ; $i++) { 
+ 					$j *= $i;
+ 					$s += $i/$j;
+
+ 			}
+ ?>
  <body>
  		<h1>Tính  S = 1/1! + 2/2! + ... n/n!</h1>
  		<table class="mau">
  			<form action="giaithua.php" method="POST">
  			<tr>
  				<td>
- 					<input type="text" name="n" placeholder="Nhập N" value="<?php echo $n; ?>"> 
+ 					<input type="text" name="nhapn" placeholder="Nhập N" value="<?php echo $n; ?>"> 
  				</td>
  			</tr>
  			<tr>
@@ -58,6 +64,7 @@
  						<input type="submit" name="" value="Xem Kết Quả" id="doi">
  					</td>
  			</tr>
+
  			</form>
  			
  		</table>
